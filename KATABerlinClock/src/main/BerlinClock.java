@@ -27,7 +27,7 @@ public class BerlinClock {
 
 	public String getBottomHours(int time)
 	{
-		return "O";
+		return getTopRowTime(4,time%5,"R");
 	}
 
 	public String getTopMinutes(int time)
@@ -44,11 +44,11 @@ public class BerlinClock {
 		String topRowTime="";
 		for (int i=0;i<rowLength;i++)
 			if (i<time)
-			topRowTime+=onValue;
+				topRowTime+=onValue;
 			else
-			topRowTime+="O";	
-		
-			
+				topRowTime+="O";	
+
+
 		return topRowTime;
 	}
 
