@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class BerlinClockTest {
-	
+
 	BerlinClock berlinClock;
 
 	@Before
@@ -15,11 +15,18 @@ public class BerlinClockTest {
 	{
 		berlinClock=new BerlinClock();
 	}
-	
+
 	@Test
 	public void testBerlinClockSeconds()
 	{
-	  assertEquals("Y",berlinClock.getSeconds(40));
-	  assertEquals("O",berlinClock.getSeconds(21));
+		assertEquals("Y",berlinClock.getSeconds(40));
+		assertEquals("O",berlinClock.getSeconds(21));
+	}
+
+	@Test
+	public void testBerlinClockTopHours()
+	{
+		assertEquals("RRRR",berlinClock.getTopHours(22));
+		assertEquals("ROOO",berlinClock.getTopHours(7));
 	}
 }
