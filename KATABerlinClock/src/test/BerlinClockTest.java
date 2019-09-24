@@ -50,4 +50,12 @@ public class BerlinClockTest {
 		assertEquals("YYYO",berlinClock.getBottomMinutes(43));
 		assertEquals("YYOO",berlinClock.getBottomMinutes(17));
 	}
+
+	@Test
+	public void testBerlinTime()
+	{
+		String digitalTime="20:48:10";
+		assertEquals(5,berlinClock.getBerlinTime(digitalTime).length);
+		assertArrayEquals(new String[]{"Y","RRRR","OOOO","YYRYYRYYROO","YYYO"},berlinClock.getBerlinTime(digitalTime));
+	}
 }
