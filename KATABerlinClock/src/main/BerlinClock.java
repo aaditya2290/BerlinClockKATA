@@ -37,8 +37,9 @@ public class BerlinClock {
 
 	public String getBottomMinutes(int time)
 	{
-		return "O";
+		return getRowTime(4,time%5,"Y");
 	}
+
 	private String getRowTime(int rowLength,int time,String onValue)
 	{
 		String topRowTime="";

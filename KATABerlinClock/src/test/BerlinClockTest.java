@@ -43,4 +43,11 @@ public class BerlinClockTest {
 		assertEquals("YYRYYRYYOOO",berlinClock.getTopMinutes(43));
 		assertEquals("YYROOOOOOOO",berlinClock.getTopMinutes(17));
 	}
+
+	@Test
+	public void testBerlinClockBottomMinutes()
+	{
+		assertEquals("YYYO",berlinClock.getBottomMinutes(43));
+		assertEquals("YYOO",berlinClock.getBottomMinutes(17));
+	}
 }
