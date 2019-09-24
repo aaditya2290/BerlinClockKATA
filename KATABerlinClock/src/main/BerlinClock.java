@@ -22,29 +22,39 @@ public class BerlinClock {
 
 	public String getTopHours(int time)
 	{
-		return getTopRowTime(4,time/5,"R");
+		return getRowTime(4,time/5,"R");
 	}
 
 	public String getBottomHours(int time)
 	{
-		return getTopRowTime(4,time%5,"R");
+		return getRowTime(4,time%5,"R");
 	}
 
 	public String getTopMinutes(int time)
 	{
-		return "O";
+		return getRowTime(11,time/5,"R");
 	}
 
 	public String getBottomMinutes(int time)
 	{
 		return "O";
 	}
-	private String getTopRowTime(int rowLength,int time,String onValue)
+	private String getRowTime(int rowLength,int time,String onValue)
 	{
 		String topRowTime="";
 		for (int i=0;i<rowLength;i++)
 			if (i<time)
-				topRowTime+=onValue;
+			{
+				if (rowLength==11)
+				{
+					if((i+1)%3==0)
+						topRowTime+=onValue;
+					else
+						topRowTime+="Y";
+				}
+				else
+					topRowTime+=onValue;	
+			}
 			else
 				topRowTime+="O";	
 
